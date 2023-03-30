@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcd.bootstrapcdn.con/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+<title>calculadora de movimiento</title>
+</head>
+<body>
+<nav class="navbar navbar-light" style="background-color: #A6FFFF;">
+
+</nav>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">CALCULADORA DE FISICA</h1>
+    <p class="lead">La física es la disciplina que se encarga de estudiar las leyes que rigen a la naturaleza. En la práctica, no obstante, esta dedicación se explicita específicamente en la consideración de aspectos tales como el movimiento, la masa, el tiempo, el espacio, etc. La física intenta desentrañar de qué forma estos conceptos se relacionan ente sí. </p>
+  </div>
+</div>
+<form id="formulario">
+<label for="distancia"> DISTANCIA:</label>
+<input type="text" id="distancia" name="distancia">
+<select id="distanciaUnidad">
+<option value="metros"> metros</option>
+<option value="pies"> pies</option>
+</select>
+<br>
+<label for="tiempo">TIEMPO:</label>
+<input type="text" id="tiempo" name="tiempo">
+<select id="tiempoUnidad">
+<option value="segundos">segundos</option>
+<option value="horas">horas</option>
+</select>
+<br>
+<label for="velocidadUnidad">unidades de velocidad:</label>
+<select id="velocidadUnidad">
+	<option value="metros por segundo">m/s</option>
+	<option value="pies_por_segundo">f/s</option>
+	<option value="kilometros_por_hora">km/hr</option>
+	<option value="millas_por_hora">mph</option>
+</select>
+<br>
+<br>
+<button type="button" class="btn btn-info" value="calcular" onclick="calcular()">Calcular</button>
+</form>
+<br>
+<p style="color: #3d3ded"; background-color:#ee8ce6>Velocidad: <span id="velocidad"></span>
+<script>
+	function calcular(){
+
+		const distancia = parseFloat(document.getElementById('distancia').value);
+		console.log("la distancia que pusiste:"+distancia);
+		//1. esta a modificare despues...
+		document.getElementById('velocidad').textContent= distancia.toFixed(4) + ' '+ distancia;
+	}
+</script>
+</body>
+</html> 
